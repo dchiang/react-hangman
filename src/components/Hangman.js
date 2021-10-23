@@ -93,8 +93,6 @@ const Hangman = (props) => {
     }
     setGuessedWord(resultWord);
     textInput.current.focus();
-
-    changeStage(included);
   };
 
   useEffect(() => {
