@@ -22,7 +22,7 @@ const Hangman = (props) => {
   );
   const [wordToGuess, setWordToGuess] = useState("");
   const [picture, setPicture] = useState(
-    `/pictures/hangman-${mistakes.length}.png`
+    `${process.env.PUBLIC_URL}/pictures/hangman-${mistakes.length}.png`
   );
   const [guessedWord, setGuessedWord] = useState([]);
 
@@ -147,9 +147,9 @@ const Hangman = (props) => {
       let newPicture = picture;
       if (included && evalWin()) {
         newTitle = "You Win!";
-        newPicture = "/pictures/hangman-win.gif";
+        newPicture = `${process.env.PUBLIC_URL}/pictures/hangman-win.gif`;
       } else if (!included) {
-        newPicture = `/pictures/hangman-${mistakes.length}.png`;
+        newPicture = `${process.env.PUBLIC_URL}/pictures/hangman-${mistakes.length}.png`;
         if (evalLoose()) {
           newTitle = "You Loose! :(";
         }
